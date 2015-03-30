@@ -8,14 +8,16 @@ class User {
 
         $bc_api = new ApiController();
         $login_data = array(
-		     'username' => 'bazaarcorner',
-		     'password' => 'bazaarcorner'
+		     'username' => 'badjo',
+		     'password' => '123456'
 		);
 		
 		$new_user_details = array(
              'role_id'    => '1'
+            ,'user_group_id'    => '1'
             ,'username'         => 'badjo'
             ,'password'         => '123456'
+            ,'password_confirmation' => '123456'
             ,'email'            => 'joebenick@gmail.com'
             ,'first_name'       => 'Badjo'
             ,'last_name'        => 'Badiola'
