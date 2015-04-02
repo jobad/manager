@@ -30,10 +30,10 @@
                         <h3 class="panel-title">Bazaarcorner Manager Login</h3>
                     </div>
                     <div class="panel-body">
-                        <form accept-charset="UTF-8" role="form">
+                        <form accept-charset="UTF-8" role="form" method="post">
                         <fieldset>
                             <div class="form-group">
-                                <input class="form-control" placeholder="Username" name="username" type="text">
+                                <input class="form-control" placeholder="Username" name="username" type="text"><input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
                             </div>
                             <div class="form-group">
                                 <input class="form-control" placeholder="Password" name="password" type="password" value="">
