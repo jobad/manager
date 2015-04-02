@@ -20,4 +20,5 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);*/
 
-Route::get('/', 'UserauthController@login');
+Route::get('login', 'UserauthController@showLogin');
+Route::post('login', 'UserauthController@login');
