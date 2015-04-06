@@ -3,6 +3,7 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Session;
+use Illuminate\Http\RedirectResponse;
 
 use Illuminate\Http\Request;
 
@@ -35,7 +36,8 @@ class UserauthController extends Controller {
 		
 		if (!empty($validateUser->success) && $validateUser->success == '1') {
 			Session::put('isvalid', true);
-			return true;
+			
+			return redirect('dashboard');
 		} else {
 			return false;
 		}
