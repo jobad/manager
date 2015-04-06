@@ -2,6 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Session;
 
 use Illuminate\Http\Request;
 
@@ -29,9 +30,14 @@ class UserauthController extends Controller {
 		$user = new User();
 		
 		$validateUser = $user->bcLogin($username, $password);
-
-		var_dump($validateUser);
-
-        return 'Friend added!';
+		
+		$validateUser = json_decode($validateUser);
+		
+		if (!empty($validateUser->success) && $validateUser->success == '1') {
+			Session::put('isvalid', true);
+			return true;
+		} else {
+			return false;
+		}
 	}
 }

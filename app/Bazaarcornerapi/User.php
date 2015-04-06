@@ -12,6 +12,9 @@ class User {
 		     'password' => $password
 		);
 		
+        $result = $bc_api->request('POST','/login',$login_data);
+
+        
 		/*$new_user_details = array(
              'role_id'    => '1'
             ,'user_group_id'    => '1'
@@ -32,7 +35,7 @@ class User {
     	);
 		var_dump($bc_api->request('POST','/user',$new_user_details)); exit;
             exit;*/
-        $result = $bc_api->request('POST','/login',$login_data);
+        
 
 
         return $result;
