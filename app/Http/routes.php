@@ -22,3 +22,5 @@ Route::controllers([
 
 Route::get('login', 'UserauthController@showLogin');
 Route::post('login', 'UserauthController@login');
+
+Route::get('dashboard', 'DashboardController@index');
