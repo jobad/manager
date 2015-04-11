@@ -35,6 +35,7 @@ class UserauthController extends Controller {
 		$validateUser = json_decode($validateUser);
 		
 		if (!empty($validateUser->success) && $validateUser->success == '1') {
+			Session::put('user_session', $validateUser);
 			Session::put('isvalid', true);
 			
 			return redirect('dashboard');
