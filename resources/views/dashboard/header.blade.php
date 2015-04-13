@@ -1,8 +1,8 @@
-@extends('dashboardlayout');
+@extends('dashboardlayout')
 
 @section('header')
-asdasd
+
+test
 
 
-
-      $stop
+@stop
