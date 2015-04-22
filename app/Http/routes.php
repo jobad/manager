@@ -23,4 +23,8 @@ Route::controllers([
 Route::get('login', 'UserauthController@showLogin');
 Route::post('login', 'UserauthController@login');
 
+Route::get('/', 'DashboardController@index');
 Route::get('dashboard', 'DashboardController@index');
+
+Route::get('user-list', 'UsersController@userList');
+Route::get('user-add', 'UsersController@userAdd');
