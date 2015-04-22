@@ -14,31 +14,25 @@ class User {
 		
         $result = $bc_api->request('POST','/login',$login_data);
 
-        
-		/*$new_user_details = array(
-             'role_id'    => '1'
-            ,'user_group_id'    => '1'
-            ,'username'         => 'badjo'
-            ,'password'         => '123456'
-            ,'password_confirmation' => '123456'
-            ,'email'            => 'joebenick@gmail.com'
-            ,'first_name'       => 'Badjo'
-            ,'last_name'        => 'Badiola'
-            ,'address'			=> ''
-            ,'country_id'		=> ''
-            ,'phone'            => '09291614935'
-            ,'birthdate'         => '1983-08-01'            
-            ,'facebook'         => 'https://www.facebook.com/jobad'
-            ,'twitter'          => 'https://twitter.com/jobad'
-            ,'profile_image'    => ''
-            ,'remember_token'   => ''            
-    	);
-		var_dump($bc_api->request('POST','/user',$new_user_details)); exit;
-            exit;*/
-        
-
-
         return $result;
     }
 
+    public function bcCreateAccount($arr_info) {
+
+        $bc_api = new ApiController();
+
+        $create_user = $bc_api->request('POST','/user', $arr_info);
+    }
+
+    public function bcEditAccount($arr_info) {
+        $bc_api = new Apicontroller();
+
+        $update_user = $bc_api->request('POST', '/user-update', $arr_info);
+    }
+
+    public function bcDeleteAccount($id) {
+        $bc_api = new Apicontroller();
+
+        $update_user = $bc_api->request('POST', '/user-delete', $id);
+    }
 }
