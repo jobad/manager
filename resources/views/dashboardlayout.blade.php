@@ -136,6 +136,7 @@
               <ul class="treeview-menu">
                 <li><a href="user-list"><i class="fa fa-circle-o"></i> List Users</a></li>
                 <li><a href="user-add"><i class="fa fa-circle-o"></i> Add User</a></li>
+                
               </ul>
             </li>           
           </ul>

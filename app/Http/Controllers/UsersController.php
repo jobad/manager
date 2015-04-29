@@ -16,7 +16,16 @@ class UsersController extends Controller {
 		return view('users.list');
 	}
 
-	public function userAdd() {
+	public function userAdd(Request $request) {
+		var_dump($request);
 		return view('users.add');
+	}
+
+	public function userEdit() {
+		return view('users.edit');
+	}
+
+	public function userDelete(){
+		return true;
 	}
 }
