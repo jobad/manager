@@ -17,10 +17,7 @@ class UserauthController extends Controller {
 	}
 
 	public function showLogin() 
-	{
-		//$test = new User();
-
-		//var_dump($test->bcLogin('1', '2'));
+	{		
 		return  view('login');
 	}
 

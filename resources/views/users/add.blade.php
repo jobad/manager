@@ -1,5 +1,6 @@
 @extends ("dashboardlayout")
 @section('header')
+
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -19,7 +20,7 @@
             <h3 class="box-title">Add User</h3>
           </div><!-- /.box-header -->
           <div class="box-body">
-            {!! Form::open() !!}
+            {!! Form::open('addduse', '', ['id'=>'test']) !!}
 
               {!! Form::label('firstname', 'Firstname') !!}
               {!! Form::text('first_name', '', ['class' => 'form-control', 'placeholder' => 'Firstname']) !!}
@@ -63,7 +64,7 @@
               {!! Form::label('sub', 'Firstname') !!}
               {!! Form::text('text', '', ['class' => 'form-control', 'placeholder' => 'Firstname']) !!}
 
-              {!! Form::submit('Register',['class'=>'btn btn-default']) !!}
+              {!! Form::submit('Register',['class'=>'btn btn-default', 'id'=>'submit-add']) !!}
 
 			{!! Form::close() !!}
           </div><!-- /.box-body -->

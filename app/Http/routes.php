@@ -28,3 +28,4 @@ Route::get('dashboard', 'DashboardController@index');
 
 Route::get('user-list', 'UsersController@userList');
 Route::get('user-add', 'UsersController@userAdd');
+Route::post('user-add', 'UsersController@userInsert');

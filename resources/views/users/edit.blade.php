@@ -63,7 +63,7 @@
               {!! Form::label('sub', 'Firstname') !!}
               {!! Form::text('text', '', ['class' => 'form-control', 'placeholder' => 'Firstname']) !!}
 
-              {!! Form::submit('Register',['class'=>'btn btn-default']) !!}
+              {!! Form::submit('Register',['class'=>'btn btn-default', 'id'=>'submit-edit']) !!}
 
 			{!! Form::close() !!}
           </div><!-- /.box-body -->

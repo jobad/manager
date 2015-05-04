@@ -20,8 +20,14 @@ class User {
     public function bcCreateAccount($arr_info) {
 
         $bc_api = new ApiController();
-
+var_dump($arr_info);
         $create_user = $bc_api->request('POST','/user', $arr_info);
+var_dump($create_user);
+        if ($create_user) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public function bcEditAccount($arr_info) {
