@@ -20,49 +20,77 @@
             <h3 class="box-title">Add User</h3>
           </div><!-- /.box-header -->
           <div class="box-body">
-            {!! Form::open('addduse', '', ['id'=>'test']) !!}
+            {!! Form::open(['id'=>'useradd']) !!}
+              <div class="form-group">              
+                  {!! Form::label('firstname', 'Firstname') !!}
+                  {!! Form::text('first_name', '', ['class' => 'form-control', 'placeholder' => 'Firstname', 'id' => 'first_name']) !!}
+              </div>
+              
+              <div class="form-group">              
+                  {!! Form::label('firstname', 'Firstname') !!}
+                  {!! Form::text('first_name', '', ['class' => 'form-control', 'placeholder' => 'Firstname', 'id' => 'first_name']) !!}
+              </div>
 
-              {!! Form::label('firstname', 'Firstname') !!}
-              {!! Form::text('first_name', '', ['class' => 'form-control', 'placeholder' => 'Firstname']) !!}
+              <div class="form-group">
+                  {!! Form::label('lastname', 'Lastname') !!}
+                  {!! Form::text('last_name', '', ['class' => 'form-control', 'placeholder' => 'Lastname']) !!}
+              </div>
 
-              {!! Form::label('lastname', 'Lastname') !!}
-              {!! Form::text('last_name', '', ['class' => 'form-control', 'placeholder' => 'Lastname']) !!}
+              <div class="form-group">
+            	   {!! Form::label('username', 'Username') !!}
+            	   {!! Form::text('username', '', ['class' => 'form-control', 'placeholder' => 'Username', 'size' => '10', 'maxlength' => '10']) !!}
+              </div>
 
-            	{!! Form::label('username', 'Username') !!}
-            	{!! Form::text('username', '', ['class' => 'form-control', 'placeholder' => 'Username', 'size' => '10', 'maxlength' => '10']) !!}
+              <div class="form-group">
+            	   {!! Form::label('password', 'Password') !!}
+            	   {!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Password']) !!}
+              </div>
 
-            	{!! Form::label('password', 'Password') !!}
-            	{!! Form::password('password', '', ['class' => 'form-control', 'placeholder' => 'Password']) !!}
+              <div class="form-group">
+                 {!! Form::label('password_confirm', 'Confirm Password') !!}
+                 {!! Form::password('password_confirm', ['class' => 'form-control', 'placeholder' => 'Confirm Password']) !!}
+              </div>
 
-              {!! Form::label('password_confirm', 'Confirm Password') !!}
-              {!! Form::password('password_confirm', '', ['class' => 'form-control', 'placeholder' => 'Confirm Password']) !!}
+              <div class="form-group">
+                  {!! Form::label('email', 'Email') !!}
+                  {!! Form::text('email', '', ['class' => 'form-control', 'placeholder' => 'Email']) !!}
+              </div>
 
-              {!! Form::label('email', 'Email') !!}
-              {!! Form::text('email', '', ['class' => 'form-control', 'placeholder' => 'Email']) !!}
+              <div class="form-group">
+                  {!! Form::label('birthday', 'Birthday') !!}
+                  {!! Form::text('birthday', '', ['class' => 'form-control', 'placeholder' => 'Birthday']) !!}
+              </div>
 
-              {!! Form::label('birthday', 'Birthday') !!}
-              {!! Form::text('birthday', '', ['class' => 'form-control', 'placeholder' => 'Birthday']) !!}
+              <div class="form-group">
+                  {!! Form::label('phone', 'Phone Number') !!}
+                  {!! Form::text('phone', '', ['class' => 'form-control', 'placeholder' => 'Phone Number']) !!}
+              </div>
 
-              {!! Form::label('phone', 'Phone Number') !!}
-              {!! Form::text('phone', '', ['class' => 'form-control', 'placeholder' => 'Phone Number']) !!}
+              <div class="form-group">
+                  {!! Form::label('Facebook', 'Facebook') !!}
+                  {!! Form::text('facebook', '', ['class' => 'form-control', 'placeholder' => 'Facebook']) !!}
+              </div>
 
-              {!! Form::label('Facebook', 'Facebook') !!}
-              {!! Form::text('facebook', '', ['class' => 'form-control', 'placeholder' => 'Facebook']) !!}
+              <div class="form-group">
+                  {!! Form::label('twitter', 'Twitter') !!}
+                  {!! Form::text('twitter', '', ['class' => 'form-control', 'placeholder' => 'Twitter']) !!}
+              </div>
 
-              {!! Form::label('twitter', 'Twitter') !!}
-              {!! Form::text('twitter', '', ['class' => 'form-control', 'placeholder' => 'Twitter']) !!}
+              <div class="form-group">
+                  {!! Form::label('profile_photo', 'Profile Photo') !!}
+                  {!! Form::text('profile_image', '', ['class' => 'form-control', 'placeholder' => 'Profile Photo']) !!}
+              </div>
 
-              {!! Form::label('profile_photo', 'Profile Photo') !!}
-              {!! Form::text('profile_image', '', ['class' => 'form-control', 'placeholder' => 'Profile Photo']) !!}
+              <div class="form-group">
+                  {!! Form::label('cover_photo', 'Cover Photo') !!}
+                  {!! Form::text('cover_image', '', ['class' => 'form-control', 'placeholder' => 'Cover Photo']) !!}
+              </div>
 
-              {!! Form::label('cover_photo', 'Cover Photo') !!}
-              {!! Form::text('cover_image', '', ['class' => 'form-control', 'placeholder' => 'Cover Photo']) !!}
+              <div class="form-group">
+                  {!! Form::label('cover_text', 'Cover Text') !!}
+                  {!! Form::text('cover_text', '', ['class' => 'form-control', 'placeholder' => 'Cover Text']) !!}
+              </div>
 
-              {!! Form::label('cover_text', 'Cover Text') !!}
-              {!! Form::text('cover_text', '', ['class' => 'form-control', 'placeholder' => 'Cover Text']) !!}
-
-              {!! Form::label('sub', 'Firstname') !!}
-              {!! Form::text('text', '', ['class' => 'form-control', 'placeholder' => 'Firstname']) !!}
 
               {!! Form::submit('Register',['class'=>'btn btn-default', 'id'=>'submit-add']) !!}
 
