@@ -15,6 +15,9 @@ class UsersController extends Controller {
 	}
 
 	public function userList() {
+		$user = new User();
+		$users = $user->getAllUser();
+		
 		return view('users.list');
 	}
 
@@ -35,7 +38,7 @@ class UsersController extends Controller {
 		$user = new User();
 
 		$create_user = $user->bcCreateAccount($data);
-var_dump($create_user); exit;
+
 		return $create_user;
 
 	}

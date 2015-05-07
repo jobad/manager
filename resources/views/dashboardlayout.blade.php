@@ -171,6 +171,11 @@
     </script>
     <!-- Bootstrap 3.3.2 JS -->
     <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>    
+
+    <!-- DATA TABES SCRIPT -->
+    <script src="plugins/datatables/jquery.dataTables.js" type="text/javascript"></script>
+    <script src="plugins/datatables/dataTables.bootstrap.js" type="text/javascript"></script>
+
     <!-- Morris.js charts -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
     <script src="plugins/morris/morris.min.js" type="text/javascript"></script>
@@ -201,5 +206,23 @@
 
     <!-- AdminLTE for demo purposes -->
     <script src="dist/js/demo.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+      $(function () {
+        //$("#example2").dataTable();
+        $("#example2").click(function () {
+          alert('asdasf');
+        });
+        $('#example2').dataTable({
+          "bPaginate": true,
+          "bLengthChange": false,
+          "bFilter": false,
+          "bSort": true,
+          "bInfo": true,
+          "bAutoWidth": false
+        });
+      });
+    </script>
+
   </body>
 </html>
