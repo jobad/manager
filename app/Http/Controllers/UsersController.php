@@ -16,9 +16,9 @@ class UsersController extends Controller {
 
 	public function userList() {
 		$user = new User();
-		$users = $user->getAllUser();
-		
-		return view('users.list');
+		$result = $user->getAllUser();
+		$users = $result->data;
+		return view('users.list', compact('users'));
 	}
 
 	public function userAdd() {

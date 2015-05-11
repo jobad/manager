@@ -22,6 +22,7 @@ class User {
         $bc_api = new ApiController();
 
         $create_user = $bc_api->request('POST','/user', $arr_info);
+        
         if ($create_user) {
             return true;
         } else {
