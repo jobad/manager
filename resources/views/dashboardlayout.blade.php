@@ -122,7 +122,7 @@
           <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li>
             <li>
-              <a href="pages/mailbox/mailbox.html">
+              <a href="order-monitor">
                 <i class="fa fa-bar-chart"></i> <span>Order Monitor</span>                
               </a>
             </li>

@@ -27,9 +27,10 @@
                   <table id="example1" class="table table-bordered table-striped">
                     <thead>
                       <tr>
-                        <th>First Name</th>
-                        <th>Last Name</th>
+                        <th>ID</th>
                         <th>Username</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>                        
                         <th>E-mail</th>
                         <th>Role</th>
                         <th>Action</th>
@@ -38,20 +39,22 @@
                     <tbody>
                       @foreach ($users as $user)                    
                         <tr>
-                          <td>{{ $user->first_name }}</td>
-                          <td>{{ $user->last_name }}</td>
+                          <td><a href="{{ $user->id }}" data-toggle="tooltip" title="View Details">{{ $user->id }}</a></td>
                           <td>{{ $user->username }}</td>
+                          <td>{{ $user->first_name }}</td>
+                          <td>{{ $user->last_name }}</td>                          
                           <td>{{ $user->email }}</td>
                           <td>{{ $user->role_id }}</td>
-                          <td>[Edit] [Delete]</td>
+                          <td><a href="#" data-toggle="tooltip" title="Edit"><span class="glyphicon glyphicon-edit"></span></a>  <a href="#" data-toggle="tooltip" title="Delete"><span class="glyphicon glyphicon-remove"></span></a></td>
                         </tr>
                       @endforeach                      
                     </tbody>
                     <tfoot>
                       <tr>
-                        <th>First Name</th>
-                        <th>Last Name</th>
+                        <th>ID</th>
                         <th>Username</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>                        
                         <th>E-mail</th>
                         <th>Role</th>
                         <th>Action</th>
