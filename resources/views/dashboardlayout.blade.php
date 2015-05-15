@@ -42,7 +42,7 @@
       
       <header class="main-header">
         <!-- Logo -->
-        <a href="index2.html" class="logo"><b>Bazaar</b>Corner</a>
+        <a href="index.php" class="logo"><b>Bazaar</b> Manager</a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">
           <!-- Sidebar toggle button-->
@@ -97,17 +97,7 @@
       <aside class="main-sidebar">
         <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
-          <!-- Sidebar user panel -->
-          <div class="user-panel">
-            <div class="pull-left image">
-              <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
-            </div>
-            <div class="pull-left info">
-              <p>Alexander Pierce</p>
-
-              <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-            </div>
-          </div>
+         
           <!-- search form -->
           <!-- <form action="#" method="get" class="sidebar-form">
             <div class="input-group">
@@ -122,7 +112,7 @@
           <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li>
             <li>
-              <a href="order-monitor">
+              <a href="order-search">
                 <i class="fa fa-bar-chart"></i> <span>Order Monitor</span>                
               </a>
             </li>
@@ -153,7 +143,7 @@
         <div class="pull-right hidden-xs">
           <b>Version</b> 2.0
         </div>
-        <strong>Copyright &copy; 2014-<?php echo date('Y'); ?> <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights reserved.
+        <strong>Copyright &copy; 2014-<?php echo date('Y'); ?> <a href="http://bazaarcorner.com">BazaarCorner</a>.</strong> All rights reserved.
       </footer>
     </div><!-- ./wrapper -->
 
