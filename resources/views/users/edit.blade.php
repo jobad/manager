@@ -1,5 +1,5 @@
 @extends ("dashboardlayout")
-@section('header')
+@section('body')
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
