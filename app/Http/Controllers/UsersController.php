@@ -4,7 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
-
+use Session;
 use App\Bazaarcornerapi\User;
 
 class UsersController extends Controller {
@@ -18,6 +18,7 @@ class UsersController extends Controller {
 		$user = new User();
 		$result = $user->getAllUser();
 		$users = $result->data;
+
 		return view('users.list', compact('users'));
 	}
 

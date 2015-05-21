@@ -1,3 +1,6 @@
+@foreach ($user_details as $user_detail) 
+  
+
 <!DOCTYPE html>
 <html>
   <head>
