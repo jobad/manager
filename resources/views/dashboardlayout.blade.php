@@ -1,5 +1,8 @@
 @foreach ($user_details as $user_detail) 
-  
+{{ $user_detail->username }}
+
+@endforeach
+
 
 <!DOCTYPE html>
 <html>
