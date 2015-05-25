@@ -12,11 +12,11 @@ class DashboardController extends Controller {
 		if (!Session::get('isvalid')) {
 			return redirect('login');
 		} else {
-			$user_details = Session::get('user_session');			
+			$stduser_details = Session::get('user_session');
+			$user_details = $stduser_details->data;
+			return view('dashboard.index', compact('user_details'));			
 		}
-
-
-		return view('dashboard.index', compact('user_details'));
+		
 	}
 
 	/*public function user() {
