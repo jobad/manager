@@ -66,18 +66,7 @@
                       <small>Member since Nov. 2012</small>
                     </p>
                   </li>
-                  <!-- Menu Body -->
-                  <li class="user-body">
-                    <div class="col-xs-4 text-center">
-                      <a href="#">Followers</a>
-                    </div>
-                    <div class="col-xs-4 text-center">
-                      <a href="#">Sales</a>
-                    </div>
-                    <div class="col-xs-4 text-center">
-                      <a href="#">Friends</a>
-                    </div>
-                  </li>
+                  <!-- Menu Body -->                  
                   <!-- Menu Footer-->
                   <li class="user-footer">
                     <div class="pull-left">
@@ -113,14 +102,19 @@
             <li class="header">MAIN NAVIGATION</li>
             <li>
               <a href="order-search">
-                <i class="fa fa-bar-chart"></i> <span>Order Monitor</span>                
+                <i class="fa fa-search"></i> <span>Search Order</span>                
               </a>
             </li>
             <li>
-              <a href="pages/mailbox/mailbox.html">
-                <i class="fa fa-list"></i> <span>Listing</span>                
+              <a href="most-bought">
+                <i class="fa fa-bar-chart-o"></i> <span>Most Bought</span>
               </a>
             </li>
+            <li>
+              <a href="top-brands">
+                <i class="fa fa-list"></i> <span>Top Brands</span>
+              </a>
+            </li>            
            <li class="treeview">
               <a href="#">
                 <i class="fa fa-users"></i> <span>Users</span> <i class="fa fa-angle-left pull-right"></i>
@@ -130,7 +124,12 @@
                 <li><a href="user-add"><i class="fa fa-circle-o"></i> Add User</a></li>
                 
               </ul>
-            </li>           
+            </li>  
+            <li>
+              <a href="logout">
+                <i class="fa fa-sign-out"></i> <span>Sign Out</span>
+              </a>
+            </li>          
           </ul>
         </section>
         <!-- /.sidebar -->
@@ -141,7 +140,7 @@
       </div><!-- /.content-wrapper -->
       <footer class="main-footer">
         <div class="pull-right hidden-xs">
-          <b>Version</b> 2.0
+          <b>BazaarCorner Manager</b> 1.0
         </div>
         <strong>Copyright &copy; 2014-<?php echo date('Y'); ?> <a href="http://bazaarcorner.com">BazaarCorner</a>.</strong> All rights reserved.
       </footer>

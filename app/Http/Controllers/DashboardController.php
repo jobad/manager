@@ -14,7 +14,12 @@ class DashboardController extends Controller {
 		} else {
 			$stduser_details = Session::get('user_session');
 			$user_details = $stduser_details->data;
-			return view('dashboard.index', compact('user_details'));			
+
+			if ($user_details || $user_details != NULL) {
+				return view('dashboard.index', compact('user_details'));			
+			} else {
+				return redirect('login');
+			}			
 		}
 		
 	}
