@@ -1,6 +1,7 @@
 <?php namespace App\Bazaarcornerapi;
 
 use App\Bazaarcornerapi\Apicontroller;
+use Session;
 
 class User {
 
@@ -34,6 +35,8 @@ class User {
         $bc_api = new Apicontroller();
 
         $update_user = $bc_api->request('POST', '/user-update', $arr_info);
+
+        return $update_user;
     }
 
     public function getUserDetails($userid) {        
@@ -55,6 +58,15 @@ class User {
     public function bcDeleteAccount($id) {
         $bc_api = new Apicontroller();
 
-        $update_user = $bc_api->request('POST', '/user-delete', $id);
+        $delete_user = $bc_api->request('POST', '/user-delete', $id);
+
+        return $delete_user;
+    }
+
+    public function userSession($session_name) {
+        $stduser_details = Session::get($session_name);
+        $user_details = $stduser_details->data;
+
+        return $user_details;
     }
 }

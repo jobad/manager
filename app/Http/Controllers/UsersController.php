@@ -19,12 +19,16 @@ class UsersController extends Controller {
 		$result = $user->getAllUser();
 		$users = $result->data;
 
-		return view('users.list', compact('users'));
+		$user_details = $user->userSession('user_session');
+
+		return view('users.list', compact('users', 'user_details'));
 	}
 
 	public function userAdd() {
+		$user = new User();
+		$user_details = $user->userSession('user_session');
 
-		return view('users.add');
+		return view('users.add', compact('user_details'));
 	}
 
 	public function userInsert(Request $request) {
@@ -37,7 +41,7 @@ class UsersController extends Controller {
 		$data['email'] = $request->input('email');
 
 		$user = new User();
-
+		
 		$create_user = $user->bcCreateAccount($data);
 
 		return $create_user;
