@@ -23,6 +23,8 @@ Route::controllers([
 Route::get('login', 'UserauthController@showLogin');
 Route::post('login', 'UserauthController@login');
 
+Route::get('logout', 'UserauthController@logout');
+
 Route::get('/', 'DashboardController@index');
 Route::get('dashboard', 'DashboardController@index');
 
@@ -31,5 +33,9 @@ Route::get('user-add', 'UsersController@userAdd');
 Route::post('user-add', 'UsersController@userInsert');
 
 Route::get('order-search', 'OrdersController@searchOrder');
+Route::post('order-search', 'OrdersController@searchResult');
+
 Route::get('top-brands', 'OrdersController@topBrands');
 Route::get('most-bought', 'OrdersController@mostBought');
+
+
