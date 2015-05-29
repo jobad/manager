@@ -21,14 +21,24 @@ class UsersController extends Controller {
 
 		$user_details = $user->userSession('user_session');
 
-		return view('users.list', compact('users', 'user_details'));
+		if ($user_details || $user_details != NULL) {
+			return view('users.add', compact('user_details'));
+		} else {
+			return redirect('login');
+		}
+
+		
 	}
 
 	public function userAdd() {
 		$user = new User();
 		$user_details = $user->userSession('user_session');
 
-		return view('users.add', compact('user_details'));
+		if ($user_details || $user_details != NULL) {
+			return view('users.add', compact('user_details'));
+		} else {
+			return redirect('login');
+		}
 	}
 
 	public function userInsert(Request $request) {

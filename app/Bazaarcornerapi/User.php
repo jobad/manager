@@ -65,8 +65,15 @@ class User {
 
     public function userSession($session_name) {
         $stduser_details = Session::get($session_name);
-        $user_details = $stduser_details->data;
+        
+        if (isset($stduser_details)) {
+            $user_details = $stduser_details->data;
+            return $user_details;
+        } else {
+            return false;
+        }
+            
 
-        return $user_details;
+        
     }
 }

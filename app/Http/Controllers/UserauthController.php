@@ -40,4 +40,11 @@ class UserauthController extends Controller {
 			return false;
 		}
 	}
+
+	public function logout() {
+		Session::flush();
+		
+		return  redirect('login');
+
+	}
 }

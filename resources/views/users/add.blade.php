@@ -154,10 +154,7 @@
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="dist/js/pages/dashboard.js" type="text/javascript"></script>
 
-    <!-- AdminLTE for demo purposes -->
-    <script src="dist/js/demo.js" type="text/javascript"></script>
-
-
+   
 @stop
 <!-- $new_user_details = array(
              'role_id'    => '1'
