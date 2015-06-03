@@ -15,14 +15,17 @@ class UsersController extends Controller {
 	}
 
 	public function userList() {
-		$user = new User();
+		$user = new User();		
+		/*$result = $user->getMerchants();
+		print_r($result);
+		exit;*/
 		$result = $user->getAllUser();
 		$users = $result->data;
 
 		$user_details = $user->userSession('user_session');
 
 		if ($user_details || $user_details != NULL) {
-			return view('users.add', compact('user_details'));
+			return view('users.list', compact('user_details', 'users'));
 		} else {
 			return redirect('login');
 		}
@@ -68,5 +71,13 @@ class UsersController extends Controller {
 
 	public function userDelete(){
 		return true;
+	}
+
+	public function getRoles() {
+		$user = new User();		
+		$result = $user->getRoles();
+		$roles = $result->data;
+
+		return $roles;
 	}
 }

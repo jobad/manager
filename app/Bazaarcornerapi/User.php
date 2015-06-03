@@ -72,8 +72,21 @@ class User {
         } else {
             return false;
         }
-            
+    }
 
-        
+    public function getRoles() {
+        $bc_api = new Apicontroller();
+
+        $get_roles = $bc_api->request('POST', '/get-role');
+
+        return $get_roles;
+    }
+
+    public function getMerchants() {
+        $bc_api = new Apicontroller();
+
+        $get_merchants = $bc_api->request('POST', '/show-merchants');
+
+        return $get_merchants;
     }
 }
