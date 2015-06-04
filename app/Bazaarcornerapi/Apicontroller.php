@@ -45,7 +45,7 @@ class ApiController{
         curl_setopt($ch, CURLOPT_POSTFIELDS, $api_data);
  
         $result = curl_exec($ch);
-        
+
         if($returnArray){$result = json_decode($result);}
         
         curl_close($ch);
