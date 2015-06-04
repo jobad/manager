@@ -73,7 +73,7 @@
                       <a href="#" class="btn btn-default btn-flat">Profile</a>
                     </div>
                     <div class="pull-right">
-                      <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                      <a href="logout" class="btn btn-default btn-flat">Sign out</a>
                     </div>
                   </li>
                 </ul>
@@ -114,7 +114,12 @@
               <a href="top-brands">
                 <i class="fa fa-list"></i> <span>Top Brands</span>
               </a>
-            </li>            
+            </li>  
+            <li>
+              <a href="merchant-list">
+                <i class="fa fa-list-alt"></i> <span>Merchant List</span>
+              </a>
+            </li>           
            <li class="treeview">
               <a href="#">
                 <i class="fa fa-users"></i> <span>Users</span> <i class="fa fa-angle-left pull-right"></i>

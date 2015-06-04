@@ -29,8 +29,6 @@ class UsersController extends Controller {
 		} else {
 			return redirect('login');
 		}
-
-		
 	}
 
 	public function userAdd() {
@@ -79,5 +77,20 @@ class UsersController extends Controller {
 		$roles = $result->data;
 
 		return $roles;
+	}
+
+	public function merchantList() {
+		$user = new User();		
+		$result = json_decode($user->getMerchants());
+		
+		$merchant_users = $result->data;
+
+		$user_details = $user->userSession('user_session');
+
+		if ($user_details || $user_details != NULL) {
+			return view('users.merchantlist', compact('user_details', 'merchant_users'));
+		} else {
+			return redirect('login');
+		}
 	}
 }
