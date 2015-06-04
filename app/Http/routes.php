@@ -32,6 +32,8 @@ Route::get('user-list', 'UsersController@userList');
 Route::get('user-add', 'UsersController@userAdd');
 Route::post('user-add', 'UsersController@userInsert');
 
+Route::get('merchant-list', 'UsersController@merchantList');
+
 Route::get('order-search', 'OrdersController@searchOrder');
 Route::post('order-search', 'OrdersController@searchResult');
 
