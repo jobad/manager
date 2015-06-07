@@ -35,28 +35,39 @@ class UsersController extends Controller {
 		$user = new User();
 		$user_details = $user->userSession('user_session');
 
-		$user_roles = $this->merchantlist();
+		$user_roles = $this->getRoles();
+
+		$roles = array();
+		foreach ($user_roles as $user_role) {
+			$roles[$user_role->id] = $user_role->title;
+		}
 
 		if ($user_details || $user_details != NULL) {
-			return view('users.add', compact('user_details', 'user_roles'));
+			return view('users.add', compact('user_details', 'roles'));
 		} else {
 			return redirect('login');
 		}
 	}
 
 	public function userInsert(Request $request) {
-		/*$data['user_group_id'] = 3;*/
+
+		$data['role_id'] = $request->input('role_id');
+		$data['is_active'] = $request->input('is_active');
 		$data['first_name'] = $request->input('first_name');
 		$data['last_name'] = $request->input('last_name');
 		$data['username'] = $request->input('username');
 		$data['password'] = $request->input('password');
 		$data['password_confirmation'] = $request->input('password_confirm');
+		$data['birthdate'] = $request->input('birthdate');
 		$data['email'] = $request->input('email');
 
 		$user = new User();
 		
 		$create_user = $user->bcCreateAccount($data);
 
+		if ($create_user) {
+			return redirect('user-list');
+		}
 		return $create_user;
 
 	}
@@ -76,6 +87,7 @@ class UsersController extends Controller {
 	public function getRoles() {
 		$user = new User();		
 		$result = $user->getRoles();
+		
 		$roles = $result->data;
 
 		return $roles;

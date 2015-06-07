@@ -26,6 +26,10 @@
                   {!! Form::text('first_name', '', ['class' => 'form-control', 'placeholder' => 'Firstname', 'id' => 'first_name']) !!}
               </div> -->
               
+              <div class="form-group">
+                {!! Form::label('role', 'Role') !!}
+                {!! Form::select ('role_id', $roles, '', ['class' => 'form-control', 'style' => 'width:135px;']) !!}
+              </div>
               <div class="form-group">              
                   {!! Form::label('firstname', 'Firstname') !!}
                   {!! Form::text('first_name', '', ['class' => 'form-control', 'placeholder' => 'Firstname', 'id' => 'first_name']) !!}
@@ -58,7 +62,7 @@
 
               <div class="form-group">
                   {!! Form::label('birthday', 'Birthday') !!}
-                  {!! Form::text('birthday', '', ['class' => 'form-control', 'placeholder' => 'Birthday']) !!}
+                  {!! Form::text('birthdate', '', ['class' => 'form-control', 'placeholder' => 'Birthday']) !!}
               </div>
 
               <div class="form-group">
@@ -89,6 +93,11 @@
               <div class="form-group">
                   {!! Form::label('cover_text', 'Cover Text') !!}
                   {!! Form::text('cover_text', '', ['class' => 'form-control', 'placeholder' => 'Cover Text']) !!}
+              </div>
+
+              <div class="form-group">
+                  {!! Form::label('status', 'Status') !!}
+                  {!! Form::checkbox('is_active', '1') !!}
               </div>
 
 

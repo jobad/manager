@@ -24,9 +24,9 @@ class User {
 
         $create_user = $bc_api->request('POST','/user', $arr_info);
         
-        if ($create_user) {
+        if ($create_user) {            
             return true;
-        } else {
+        } else {            
             return false;
         }
     }
@@ -78,7 +78,7 @@ class User {
         $bc_api = new Apicontroller();
 
         $get_roles = $bc_api->request('POST', '/get-role');
-
+        $get_roles = json_decode($get_roles);
         return $get_roles;
     }
 
