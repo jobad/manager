@@ -35,15 +35,17 @@ class UsersController extends Controller {
 		$user = new User();
 		$user_details = $user->userSession('user_session');
 
+		$user_roles = $this->merchantlist();
+
 		if ($user_details || $user_details != NULL) {
-			return view('users.add', compact('user_details'));
+			return view('users.add', compact('user_details', 'user_roles'));
 		} else {
 			return redirect('login');
 		}
 	}
 
 	public function userInsert(Request $request) {
-		$data['user_group_id'] = 3;
+		/*$data['user_group_id'] = 3;*/
 		$data['first_name'] = $request->input('first_name');
 		$data['last_name'] = $request->input('last_name');
 		$data['username'] = $request->input('username');

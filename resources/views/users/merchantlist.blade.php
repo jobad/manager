@@ -33,7 +33,7 @@
                         <th>Last Name</th>                        
                         <th>E-mail</th>                        
                         <th>Status</th>
-                        <th>Action</th>
+                        <!-- <th>Action</th> -->
                       </tr>
                     </thead>
                     <tbody>
@@ -47,10 +47,10 @@
                           <td>{{ $user->email }}</td>                          
                             @if ($user->is_active == 1)
                               <td style="color:green;">Active</td> 
-                              <td style="color:red;"><a href="#" data-toggle="tooltip" title="Click to Activate">Inactive</a></td>
+                              <!-- <td style="color:red;"><a href="#" data-toggle="tooltip" title="Click to Activate">Inactive</a></td> -->
                             @else 
                               <td style="color:red;">Inactive</td>
-                              <td style="color:green;"><a href="#" data-toggle="tooltip" title="Click to Deactivate">Active</a></td>
+                              <!-- <td style="color:green;"><a href="#" data-toggle="tooltip" title="Click to Deactivate">Active</a></td> -->
                             @endif
 
                           
@@ -65,7 +65,7 @@
                         <th>Last Name</th>                        
                         <th>E-mail</th>                        
                         <th>Status</th>
-                        <th>Action</th>
+                        <!-- <th>Action</th> -->
                       </tr>
                     </tfoot>
                   </table>
