@@ -31,7 +31,7 @@
                     </div>
                     <div class="panel-body">
                         @if (isset($error_message))
-                            <p class="alert alert-danger">{!! $error_message !!}</p>
+                            <p class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span> {!! $error_message !!}</p>
                         @endif
                         <form accept-charset="UTF-8" role="form" method="post">
                         <fieldset>
