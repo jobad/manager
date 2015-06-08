@@ -19,6 +19,7 @@ class UsersController extends Controller {
 		$user = new User();		
 		
 		$result = $user->getAllUser();
+
 		$users = $result->data;
 
 		$user_details = $user->userSession('user_session');
@@ -89,8 +90,54 @@ class UsersController extends Controller {
 		}
 	}
 
-	public function createAccount() {
+	public function userViewEdit(Request $request) {
+		$user = new User();
 		
+		$user_details = $user->userSession('user_session');
+
+		$user_roles = $this->getRoles();
+
+		$roles = array();
+		foreach ($user_roles as $user_role) {
+			$roles[$user_role->id] = $user_role->title;
+		}
+
+		$user_view = $user->getUserDetails($request->segment(3));
+		$user_view_decode = json_decode($user_view, true);
+		$user_data = $user_view_decode['data'];
+
+
+		if ($user_view) {			
+			return view('users.viewedit', compact('user_details', 'user_view', 'roles', 'user_data'));
+		} 
+	}
+
+	public function performUpdate(Request $request) {		
+		$user = new User();
+				
+		$user_details = $user->userSession('user_session');
+
+		$user_roles = $this->getRoles();
+		
+		$roles = array();
+		foreach ($user_roles as $user_role) {
+			$roles[$user_role->id] = $user_role->title;
+		}
+		$data['id'] = $request->segment(3);
+		$data['role_id'] = $request->role_id;
+		$data['is_active'] = $request->is_active;
+		$data['first_name'] = $request->first_name;
+		$data['last_name'] = $request->last_name;
+		$data['username'] = $request->username;
+		$data['password'] = $request->password;
+		$data['password_confirmation'] = $request->password_confirm;
+		$data['birthdate'] = $request->birthdate;
+		$data['email'] = $request->email;
+
+		
+		$update_result = $user->bcUpdateUser($data);
+
+		return redirect('user-list');
 	}
 
 	public function userEdit() {

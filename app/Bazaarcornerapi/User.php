@@ -40,16 +40,25 @@ class User {
         $bc_api = new Apicontroller();
 
         $result_userdetails = $bc_api->request('POST', '/userdetails', $userid);        
-
+        
         return $result_userdetails;
+    }
+
+    public function bcUpdateUser($user_data) {
+        $bc_api = new Apicontroller();
+
+        $result_update = $bc_api->request('POST', '/update-record', $user_data);
+
+        return $result_update;
     }
 
     public function getAllUser() {        
         $bc_api = new Apicontroller();
 
         $result_userlist = $bc_api->request('POST', '/user-list');        
-
-        return json_decode($result_userlist);
+        $userlist_decode = json_decode($result_userlist);
+        
+        return $userlist_decode;
     }
 
     public function bcDeleteAccount($id) {

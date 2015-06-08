@@ -28,11 +28,7 @@
             @endif
           <div class="box-body">
             {!! Form::open(['id'=>'useradd']) !!}
-             <!--  <div class="form-group">              
-                  {!! Form::label('firstname', 'Firstname') !!}
-                  {!! Form::text('first_name', '', ['class' => 'form-control', 'placeholder' => 'Firstname', 'id' => 'first_name']) !!}
-              </div> -->
-              
+                         
               <div class="form-group">
                 {!! Form::label('role', 'Role') !!}
                 {!! Form::select ('role_id', $roles, '', ['class' => 'form-control', 'style' => 'width:135px;']) !!}
@@ -87,10 +83,10 @@
                   {!! Form::text('twitter', '', ['class' => 'form-control', 'placeholder' => 'Twitter']) !!}
               </div>
 
-              <div class="form-group">
+            <!--   <div class="form-group">
                   {!! Form::label('profile_photo', 'Profile Photo') !!}
                   {!! Form::text('profile_image', '', ['class' => 'form-control', 'placeholder' => 'Profile Photo']) !!}
-              </div>
+              </div> -->
 
               <div class="form-group">
                   {!! Form::label('cover_photo', 'Cover Photo') !!}
