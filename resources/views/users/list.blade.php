@@ -37,15 +37,19 @@
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach ($users as $user)                    
+                      @foreach ($users as $user)
                         <tr>
-                          <td><a href="{{ $user->id }}" data-toggle="tooltip" title="View Details">{{ $user->id }}</a></td>
+                          <td>{{ $user->id }}</a></td>
                           <td>{{ $user->username }}</td>
                           <td>{{ $user->first_name }}</td>
                           <td>{{ $user->last_name }}</td>                          
                           <td>{{ $user->email }}</td>
                           <td>{{ $user->role_id }}</td>
-                          <td><a href="#" data-toggle="tooltip" title="Edit"><span class="glyphicon glyphicon-edit"></span></a>  <a href="#" data-toggle="tooltip" title="Delete"><span class="glyphicon glyphicon-remove"></span></a></td>
+                          <td>
+                              <a href="user-view/{{ $user->id }}" data-toggle="tooltip" title="View Details"><span class="glyphicon glyphicon-eye-open"></span></a> 
+                              <a href="user-edit/{{ $user->id }}" data-toggle="tooltip" title="Edit"><span class="glyphicon glyphicon-edit"></span></a>  
+                              <a href="user-delete/{{ $user->id }}" data-toggle="tooltip" title="Delete"><span class="glyphicon glyphicon-remove"></span></a>
+                          </td>
                         </tr>
                       @endforeach                      
                     </tbody>
