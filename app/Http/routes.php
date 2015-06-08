@@ -31,6 +31,9 @@ Route::get('dashboard', 'DashboardController@index');
 Route::get('user-list', 'UsersController@userList');
 Route::get('user-add', 'UsersController@userAdd');
 Route::post('user-add', 'UsersController@userInsert');
+Route::get('user-view', 'UsersController@userView');
+Route::get('user-edit', 'UsersController@userEdit');
+Route::get('user-delete', 'UsersController@userDelete');
 
 Route::get('merchant-list', 'UsersController@merchantList');
 
