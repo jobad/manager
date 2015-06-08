@@ -18,7 +18,11 @@
   </section>
 
   <!-- Main content -->
+
         <section class="content">
+          @if (isset($success_delete))
+              <p class="alert alert-success" role="alert"><span class="glyphicon glyphicon-ok"></span> {!! $success_delete !!}</p>
+          @endif
           <div class="row">
             <div class="col-xs-12">
               <div class="box">
@@ -44,11 +48,21 @@
                           <td>{{ $user->first_name }}</td>
                           <td>{{ $user->last_name }}</td>                          
                           <td>{{ $user->email }}</td>
-                          <td>{{ $user->role_id }}</td>
+                          <td>
+                            @if ($user->role_id == 1)
+                              Administrator
+                            @elseif ($user->role_id == 2) 
+                              Merchant
+                            @elseif ($user->role_id == 3)
+                              Regular Member
+                            @else 
+                              N/A
+                            @endif
+                          </td>
                           <td>
                               <a href="user-view/{{ $user->id }}" data-toggle="tooltip" title="View Details"><span class="glyphicon glyphicon-eye-open"></span></a> 
                               <a href="user-edit/{{ $user->id }}" data-toggle="tooltip" title="Edit"><span class="glyphicon glyphicon-edit"></span></a>  
-                              <a href="user-delete/{{ $user->id }}" data-toggle="tooltip" title="Delete"><span class="glyphicon glyphicon-remove"></span></a>
+                              <a href="user-delete/id/{{ $user->id }}" data-toggle="tooltip" title="Delete" onclick="if(!confirm('Are you sure you want to delete {{ $user->username }}?')) return false;"><span class="glyphicon glyphicon-remove"></span></a>
                           </td>
                         </tr>
                       @endforeach                      
