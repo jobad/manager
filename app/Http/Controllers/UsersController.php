@@ -155,10 +155,11 @@ class UsersController extends Controller {
 
 		$user_delete = $user->bcDeleteAccount($request->segment(3));
 		
+		
 		if ($user_delete) {
 			/*$success_delete = 'Record deleted successfully.';
 			return view('users.list', compact('user_details', 'users', 'success_delete'));*/
-			return redirect ('user-list');
+			return redirect ($request->segment(5));
 		} 
 	}
 

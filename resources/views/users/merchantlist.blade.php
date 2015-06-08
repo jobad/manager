@@ -33,14 +33,14 @@
                         <th>Last Name</th>                        
                         <th>E-mail</th>                        
                         <th>Status</th>
-                        <!-- <th>Action</th> -->
+                        <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
                       @foreach ($merchant_users as $user)  
 
                         <tr>
-                          <td><a href="{{ $user->id }}" data-toggle="tooltip" title="View Details">{{ $user->id }}</a></td>
+                          <td>{{ $user->id }}</td>
                           <td>{{ $user->username }}</td>
                           <td>{{ $user->first_name }}</td>
                           <td>{{ $user->last_name }}</td>                          
@@ -53,21 +53,13 @@
                               <!-- <td style="color:green;"><a href="#" data-toggle="tooltip" title="Click to Deactivate">Active</a></td> -->
                             @endif
 
-                          
+                          <td>
+                              <a href="user-viewedit/id/{{ $user->id }}/page/merchant-list" data-toggle="tooltip" title="Edit"><span class="glyphicon glyphicon-edit"></span></a>  
+                              <a href="user-delete/id/{{ $user->id }}/page/merchant-list" data-toggle="tooltip" title="Delete" onclick="if(!confirm('Are you sure you want to delete {{ $user->username }}?')) return false;"><span class="glyphicon glyphicon-remove"></span></a>
+                          </td>
                         </tr>
                       @endforeach                      
-                    </tbody>
-                    <tfoot>
-                      <tr>
-                        <th>ID</th>
-                        <th>Username</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>                        
-                        <th>E-mail</th>                        
-                        <th>Status</th>
-                        <!-- <th>Action</th> -->
-                      </tr>
-                    </tfoot>
+                    </tbody>                    
                   </table>
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
