@@ -37,7 +37,11 @@ class UserauthController extends Controller {
 			
 			return redirect('dashboard');
 		} else {
-			return false;
+			if (isset($validateUser->error_message) && $validateUser->error_message != '')  {
+				$error_message = $validateUser->error_message;
+
+				return view('login', compact('error_message'));
+			}
 		}
 	}
 
