@@ -56,7 +56,7 @@ class User {
         $bc_api = new Apicontroller();
 
         $delete_user = $bc_api->request('POST', '/user-delete', $id);
-
+        
         return $delete_user;
     }
 

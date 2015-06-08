@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use Session;
+
 use App\Bazaarcornerapi\User;
 
 class UsersController extends Controller {
@@ -16,9 +17,7 @@ class UsersController extends Controller {
 
 	public function userList() {
 		$user = new User();		
-		/*$result = $user->getMerchants();
-		print_r($result);
-		exit;*/
+		
 		$result = $user->getAllUser();
 		$users = $result->data;
 
@@ -98,8 +97,22 @@ class UsersController extends Controller {
 		return view('users.edit');
 	}
 
-	public function userDelete(){
-		return true;
+	public function userDelete(Request $request){
+		$user = new User();
+		
+		$result = $user->getAllUser();
+		$users = $result->data;
+
+		$user_details = $user->userSession('user_session');
+
+
+		$user_delete = $user->bcDeleteAccount($request->segment(3));
+		
+		if ($user_delete) {
+			/*$success_delete = 'Record deleted successfully.';
+			return view('users.list', compact('user_details', 'users', 'success_delete'));*/
+			return redirect ('user-list');
+		} 
 	}
 
 	public function getRoles() {
