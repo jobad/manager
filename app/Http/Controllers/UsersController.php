@@ -63,13 +63,31 @@ class UsersController extends Controller {
 
 		$user = new User();
 		
+		$user_details = $user->userSession('user_session');
+
+		$user_roles = $this->getRoles();
+
+		$roles = array();
+		foreach ($user_roles as $user_role) {
+			$roles[$user_role->id] = $user_role->title;
+		}
+
 		$create_user = $user->bcCreateAccount($data);
 
-		if ($create_user) {
-			return redirect('user-list');
-		}
-		return $create_user;
+		if (!isset($create_user->error_message)) {
+			$record_added = 'Record added successfully.';
+			return view('users.add', compact('user_details', 'roles', 'record_added'));
+		} else {
+			if (isset($create_user->error_message) && $create_user->error_message != '') {
+				$error_message = $create_user->error_message;
 
+				if ($user_details || $user_details != NULL) {
+					return view('users.add', compact('user_details', 'roles', 'error_message'));
+				} else {
+					return redirect('login');
+				}				
+			}						
+		}
 	}
 
 	public function createAccount() {

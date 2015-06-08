@@ -19,6 +19,13 @@
           <div class="box-header">
             <h3 class="box-title">Add User</h3>
           </div><!-- /.box-header -->
+            @if (isset($error_message))
+                <p class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-warning-sign"></span> {!! $error_message !!}</p>
+            @endif
+
+            @if (isset($record_added))
+                <p class="alert alert-success" role="alert"><span class="glyphicon glyphicon-ok"></span> {!! $record_added !!}</p>
+            @endif
           <div class="box-body">
             {!! Form::open(['id'=>'useradd']) !!}
              <!--  <div class="form-group">              
@@ -61,7 +68,7 @@
               </div>
 
               <div class="form-group">
-                  {!! Form::label('birthday', 'Birthday') !!}
+                  {!! Form::label('birthday', 'Birthday') !!} (mm-dd-yyyy)
                   {!! Form::text('birthdate', '', ['class' => 'form-control', 'placeholder' => 'Birthday']) !!}
               </div>
 

@@ -23,12 +23,9 @@ class User {
         $bc_api = new ApiController();
 
         $create_user = $bc_api->request('POST','/user', $arr_info);
+        $create_user = json_decode($create_user);
         
-        if ($create_user) {            
-            return true;
-        } else {            
-            return false;
-        }
+        return $create_user;
     }
 
     public function bcEditAccount($arr_info) {
