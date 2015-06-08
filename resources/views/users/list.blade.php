@@ -60,24 +60,13 @@
                             @endif
                           </td>
                           <td>
-                              <a href="user-view/{{ $user->id }}" data-toggle="tooltip" title="View Details"><span class="glyphicon glyphicon-eye-open"></span></a> 
-                              <a href="user-edit/{{ $user->id }}" data-toggle="tooltip" title="Edit"><span class="glyphicon glyphicon-edit"></span></a>  
+                              <!-- <a href="user-view/id/{{ $user->id }}" data-toggle="tooltip" title="View Details"><span class="glyphicon glyphicon-eye-open"></span></a>  -->
+                              <a href="user-viewedit/id/{{ $user->id }}" data-toggle="tooltip" title="Edit"><span class="glyphicon glyphicon-edit"></span></a>  
                               <a href="user-delete/id/{{ $user->id }}" data-toggle="tooltip" title="Delete" onclick="if(!confirm('Are you sure you want to delete {{ $user->username }}?')) return false;"><span class="glyphicon glyphicon-remove"></span></a>
                           </td>
                         </tr>
                       @endforeach                      
-                    </tbody>
-                    <tfoot>
-                      <tr>
-                        <th>ID</th>
-                        <th>Username</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>                        
-                        <th>E-mail</th>
-                        <th>Role</th>
-                        <th>Action</th>
-                      </tr>
-                    </tfoot>
+                    </tbody>                   
                   </table>
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
