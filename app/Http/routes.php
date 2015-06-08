@@ -31,9 +31,11 @@ Route::get('dashboard', 'DashboardController@index');
 Route::get('user-list', 'UsersController@userList');
 Route::get('user-add', 'UsersController@userAdd');
 Route::post('user-add', 'UsersController@userInsert');
-Route::get('user-view', 'UsersController@userView');
-Route::get('user-edit', 'UsersController@userEdit');
+/*Route::get('user-view', 'UsersController@userView');
+Route::get('user-edit', 'UsersController@userEdit');*/
 Route::get('user-delete/id/{id}', 'UsersController@userDelete');
+Route::get('user-viewedit/id/{id}', 'UsersController@userViewEdit');
+Route::post('perform-update/id/{id}', 'UsersController@performUpdate');
 
 Route::get('merchant-list', 'UsersController@merchantList');
 
