@@ -115,14 +115,6 @@ class UsersController extends Controller {
 	public function performUpdate(Request $request) {		
 		$user = new User();
 				
-		$user_details = $user->userSession('user_session');
-
-		$user_roles = $this->getRoles();
-		
-		$roles = array();
-		foreach ($user_roles as $user_role) {
-			$roles[$user_role->id] = $user_role->title;
-		}
 		$data['id'] = $request->segment(3);
 		$data['role_id'] = $request->role_id;
 		$data['is_active'] = $request->is_active;
@@ -133,9 +125,10 @@ class UsersController extends Controller {
 		$data['password_confirmation'] = $request->password_confirm;
 		$data['birthdate'] = $request->birthdate;
 		$data['email'] = $request->email;
-
 		
 		$update_result = $user->bcUpdateUser($data);
+
+		
 
 		return redirect('user-list');
 	}
