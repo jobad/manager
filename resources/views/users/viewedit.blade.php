@@ -101,7 +101,13 @@
 
               <div class="form-group">
                   {!! Form::label('status', 'Status') !!}
-                  {!! Form::checkbox('is_active', '1') !!}
+                  
+                  @if ($user_data['is_active'])
+                      {!! Form::checkbox('is_active', '1', true) !!}
+                  @else 
+                      {!! Form::checkbox('is_active', '1') !!}
+                  @endif
+
               </div>
 
 
