@@ -55,7 +55,7 @@
 
                           <td>
                               <a href="user-viewedit/id/{{ $user->id }}/page/merchant-list" data-toggle="tooltip" title="Edit"><span class="glyphicon glyphicon-edit"></span></a>  
-                              <a href="user-delete/id/{{ $user->id }}/page/merchant-list" data-toggle="tooltip" title="Delete" onclick="if(!confirm('Are you sure you want to delete {{ $user->username }}?')) return false;"><span class="glyphicon glyphicon-remove"></span></a>
+                              <!-- <a href="user-delete/id/{{ $user->id }}/page/merchant-list" data-toggle="tooltip" title="Delete" onclick="if(!confirm('Are you sure you want to delete {{ $user->username }}?')) return false;"><span class="glyphicon glyphicon-remove"></span></a> -->
                           </td>
                         </tr>
                       @endforeach                      
