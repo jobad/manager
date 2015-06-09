@@ -124,7 +124,7 @@
               <a href="#">
                 <i class="fa fa-users"></i> <span>Users</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
-              <ul class="/treeview-menu">
+              <ul class="treeview-menu">
                 <li><a href="/user-list"><i class="fa fa-circle-o"></i> List Users</a></li>
                 <li><a href="/user-add"><i class="fa fa-circle-o"></i> Add User</a></li>
                 
