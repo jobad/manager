@@ -127,9 +127,7 @@ class UsersController extends Controller {
 		$data['email'] = $request->email;
 		
 		$update_result = $user->bcUpdateUser($data);
-
 		
-
 		return redirect('user-list');
 	}
 
