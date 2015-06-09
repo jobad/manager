@@ -35,7 +35,7 @@ Route::post('user-add', 'UsersController@userInsert');
 Route::get('user-edit', 'UsersController@userEdit');*/
 Route::get('user-delete/id/{id}', 'UsersController@userDelete');
 Route::get('user-viewedit/id/{id}/page/{page}', 'UsersController@userViewEdit');
-Route::post('perform-update/id/{id}/page/{page}', 'UsersController@performUpdate');
+Route::post('perform-update/id/{id}', 'UsersController@performUpdate');
 
 Route::get('merchant-list', 'UsersController@merchantList');
 
