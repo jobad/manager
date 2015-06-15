@@ -65,8 +65,15 @@
               </div>
 
               <div class="form-group">
-                  {!! Form::label('birthday', 'Birthday') !!} (mm-dd-yyyy)
-                  {!! Form::text('birthdate', $user_data["birthdate"], ['class' => 'form-control', 'placeholder' => 'Birthdate', 'id' => 'birthdate']) !!}
+                  {!! Form::label('birthday', 'Birthday') !!}
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <i class="fa fa-calendar"></i>
+                    </div>
+                    <!-- <input type="text" class="form-control pull-right" id="reservation"/> -->
+                    {!! Form::text('birthdate', '', ['class' => 'form-control pull-right', 'placeholder' => 'Birthday', 'id'=>'reservation']) !!}
+                  </div><!-- /.input group -->
+                  
               </div>
 
               <div class="form-group">
@@ -174,5 +181,9 @@
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="/dist/js/pages/dashboard.js" type="text/javascript"></script>
 
-   
+    <script type="text/javascript">
+      $('#reservation').datepicker({
+        format: "dd-mm-yyyy"
+      });
+    </script>
 @stop
