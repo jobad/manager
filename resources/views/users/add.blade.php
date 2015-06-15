@@ -64,7 +64,7 @@
               </div>
 
               <div class="form-group">
-                  {!! Form::label('birthday', 'Birthday') !!} (mm-dd-yyyy)
+                  {!! Form::label('birthday', 'Birthday') !!} (dd-mm-yyyy)
                   {!! Form::text('birthdate', '', ['class' => 'form-control', 'placeholder' => 'Birthday']) !!}
               </div>
 

@@ -39,8 +39,8 @@
               {!! Form::label('email', 'Email') !!}
               {!! Form::text('email', '', ['class' => 'form-control', 'placeholder' => 'Email']) !!}
 
-              {!! Form::label('birthday', 'Birthday') !!}
-              {!! Form::text('birthday', '', ['class' => 'form-control', 'placeholder' => 'Birthday']) !!}
+              {!! Form::label('birthday', 'Birthday') !!} (dd-mm-yyyy)
+              {!! Form::text('birthdate', '', ['class' => 'form-control', 'placeholder' => 'Birthday']) !!}
 
               {!! Form::label('phone', 'Phone Number') !!}
               {!! Form::text('phone', '', ['class' => 'form-control', 'placeholder' => 'Phone Number']) !!}
